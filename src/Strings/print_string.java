@@ -7,6 +7,8 @@ public class print_string {
 		String str = "Hello";
 		str = "Bye";
 		System.out.println(str);
+		System.out.println(str.length());
+		System.out.println(str.charAt(0));
 
 	}
 
