@@ -20,7 +20,17 @@ public class print_string {
 		String s4 = str1.concat(str2);
 		System.out.println(s4);
 		
+		String s1 = "Hello";
+		String s2 = "Hello";
+		String st3 = "hello";
+		String st4 = new String ("Hello");
 		
+		System.out.println((s1 == s2) + " , " + (s1.equals(s2)));
+		System.out.println((s1 == st3) + " , " + (s1.equals(st3)));
+		System.out.println((s1 == st4) + " , " + (s1.equals(st4)));
+		
+		
+		System.out.println(str.indexOf("lo"));
 	}
 
 }
