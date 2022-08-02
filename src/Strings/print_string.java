@@ -1,5 +1,5 @@
 package Strings;
-
+import java.util.*;
 public class print_string {
 
 	public static void main(String[] args) {
@@ -31,6 +31,19 @@ public class print_string {
 		
 		
 		System.out.println(str.indexOf("lo"));
+		
+		StringBuilder strng = new StringBuilder ("Samyakjain");
+		strng.setCharAt(4, 'r');
+		System.out.println(strng);
+		
+		strng.deleteCharAt(7);
+		System.out.println(strng);
+		
+		strng.append('o');
+		System.out.println(strng);
+		
+		String abc = strng.toString();
+		System.out.println(abc);
 	}
 
 }
