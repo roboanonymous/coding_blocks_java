@@ -42,6 +42,7 @@ public class print_string {
 		strng.append('o');
 		System.out.println(strng);
 		
+		
 		String abc = strng.toString();
 		System.out.println(abc);
 	}
