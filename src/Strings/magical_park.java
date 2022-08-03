@@ -20,21 +20,23 @@ public class magical_park {
 				
 				else
 				{
-					continue;
+					break;
+				}
+				
+				
+				if(j < m-1)
+				{
+					s = s-1;
 				}
 				
 				if(k > s)
 				{
 					return false;
 				}
-				
-				if(j < m-1)
-				{
-					s = s-1;
-				}
 			}
+			System.out.println(s);
 		}
-		
+		System.out.println(s);
 		return true;
 	}
 
