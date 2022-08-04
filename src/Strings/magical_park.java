@@ -2,12 +2,17 @@ package Strings;
 import java.util.*;
 public class magical_park {
 	
-	public static boolean magical(int n, int m , int k, int s, char[][] arr)
+	public static void magical(int n, int m , int k, int s, char[][] arr)
 	{
 		for(int i=0; i<n; i++)
 		{
 			for(int j=0; j<m; j++)
 			{
+				if(k > s)
+				{
+					System.out.println("No");
+					System.exit(0);
+				}
 				if(arr[i][j] == '.')
 				{
 					s = s-2;
@@ -29,15 +34,21 @@ public class magical_park {
 					s = s-1;
 				}
 				
-				if(k > s)
-				{
-					return false;
-				}
+				
 			}
+			
+		}
+		
+		if(k > s)
+		{
+			System.out.println("No");
+		}
+		
+		else {
+			System.out.println("Yes");
 			System.out.println(s);
 		}
-		System.out.println(s);
-		return true;
+		
 	}
 
 	public static void main(String[] args) {
@@ -58,8 +69,7 @@ public class magical_park {
 			}
 		}
 		
-		System.out.println(magical(n,m,k,s,arr));
-		System.out.println(s);
+		magical(n,m,k,s,arr);
 		
 	}
 

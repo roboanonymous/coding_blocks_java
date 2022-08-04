@@ -6,10 +6,10 @@ public class Palindrom {
 	
 	public static boolean palin(String str)
 	{
-		int n = str.length()/2;
-		for(int i=0; i<n; i++)
+    	int n = str.length();
+		for(int i=0; i<n/2; i++)
 		{
-			if(str.charAt(i) != str.charAt(str.length()-1-i))
+			if(str.charAt(i) != str.charAt(n-1-i))
 			{
 				return false;
 			}
