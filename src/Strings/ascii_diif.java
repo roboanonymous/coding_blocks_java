@@ -2,6 +2,7 @@ package Strings;
 import java.util.*;
 public class ascii_diif {
 
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner (System.in);
@@ -25,7 +26,7 @@ public class ascii_diif {
 			}
 		}
 		
-		String news = str2.toString();
+		
 		System.out.println(str2);
 
 	}
