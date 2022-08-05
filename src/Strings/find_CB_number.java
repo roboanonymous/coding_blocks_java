@@ -32,12 +32,14 @@ public class find_CB_number {
 				
 				else if (a == 2 || a == 3 || a == 5 || a == 7 || a == 11 || a == 13 || a == 17 || a == 19 || a == 23 || a == 29)
 				{
+					System.out.println(a);
 					count++;
 					continue;
 				}
 				
 				else if ( a%2 != 0 &&  a%3 != 0 && a%5 != 0 && a%7 != 0 && a%11 != 0 && a%13 != 0 && a%17 != 0 &&  a%19 != 0 && a%23 != 0 &&  a%29 != 0)
 				{
+					System.out.println(a);
 					count++;
 				}
 				
