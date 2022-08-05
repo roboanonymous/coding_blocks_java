@@ -6,33 +6,33 @@ public class ultra_fast {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner (System.in);
-//		int a = sc.nextInt();
-//		
-//		for(int i=0; i<a; i++)
-//		{
-//			
-//		}
+		int a = sc.nextInt();
 		
-		String str = sc.nextLine();
-		String str2 = sc.nextLine();
-		
-		StringBuilder str3 = new StringBuilder ("");
-		for(int j=0; j<str.length() ; j++ )
+		for(int i=0; i<a; i++)
 		{
-			if(str.charAt(j) == str2.charAt(j))
+			String str = sc.next();
+			String str2 = sc.next();
+			
+			StringBuilder str3 = new StringBuilder ("");
+			for(int j=0; j<str.length() ; j++ )
 			{
-				str3.append('0');
+				if(str.charAt(j) == str2.charAt(j))
+				{
+					str3.append('0');
+				}
+				
+				else
+				{
+					str3.append('1');
+				}
+				
+				
 			}
 			
-			else
-			{
-				str3.append('1');
-			}
-			
-			
+			System.out.println(str3);
 		}
 		
-		System.out.println(str3);
+		
 	}
 
 }
