@@ -9,8 +9,19 @@ public class print_num {
 			return;
 		}
 		
-		pd(n-1);
-		System.out.println(n);
+		if(n%2 == 0)
+		{
+			System.out.println(n);
+			pd(n-1);
+		}
+		
+		else
+		{
+			pd(n-1);
+			System.out.println(n);
+		}
+		
+		
 		
 	}
 
