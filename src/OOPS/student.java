@@ -2,8 +2,15 @@ package OOPS;
 
 public class student {
 
-	String name;
-	int age;
+	String name = "Ram";
+	int age = 40;
+	
+	public student()
+	{
+		System.out.println("No argument constructor");
+		this.name = "Rohit";
+		this.age = 25;
+	}
 	
 	public void introduction()
 	{
