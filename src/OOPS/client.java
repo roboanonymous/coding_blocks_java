@@ -51,6 +51,9 @@ public class client {
 		System.out.println(s3.age + "  " + s3.name);
 		System.out.println(s4.age + "  " + s4.name);
 		
+		s3.introduction();
+		s3.sayhi("Sam");
+		
 	}
 
 }
