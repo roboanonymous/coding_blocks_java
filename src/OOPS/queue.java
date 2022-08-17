@@ -27,16 +27,21 @@ public class queue {
 			throw new Exception ("Queue is full");
 		}
 		
-		int idx = front+size;
+		int idx = (front+size)%data.length;
 		data[idx] = n;
 		size++;
 	}
 	
-	public int dequeue()
+	public int dequeue() throws Exception
 	{
+		if(isempty())
+		{
+			throw new Exception ("Queue is empty");
+		}
+		
 		int temp = data[front];
 		data[front] = 0;
-		front++;
+		front = (front +1)% data.length;
 		size--;
 		return temp;
 	}
@@ -63,6 +68,16 @@ public class queue {
 		return size== data.length;
 	}
 	
-	
+	public void display()
+	{
+		System.out.println("-----------------------");
+		for(int i=0; i<size; i++)
+		{
+			int idx = (i+front)%data.length;
+			System.out.print(data[idx] + "  ");
+		}
+		System.out.println();
+		System.out.println("-----------------------");
+	}
 	
 }
