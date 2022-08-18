@@ -2,8 +2,8 @@ package OOPS;
 
 public class stack {
 
-	private int [] data;
-	private int tos;
+	protected int [] data;
+	protected int tos;
 	
 	public stack ()
 	{
