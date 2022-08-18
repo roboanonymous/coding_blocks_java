@@ -2,9 +2,9 @@ package OOPS;
 
 public class queue {
 	
-	private int [] data;
-	private int front;
-	private int size;
+	protected int [] data;
+	protected int front;
+	protected int size;
 	
 	public queue()
 	{
