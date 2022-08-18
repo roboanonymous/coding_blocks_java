@@ -23,6 +23,7 @@ public class stack_client {
 		sk2.push(40);
 		sk2.push(50);
 		sk2.push(60);
+		sk2.push(70);
 		
 		sk2.display();
 		System.out.println(sk2.size());
