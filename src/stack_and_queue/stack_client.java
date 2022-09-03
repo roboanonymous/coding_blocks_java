@@ -18,6 +18,19 @@ public class stack_client {
 		
 		sk.display();
 
+		pop_using_queue sk2 = new pop_using_queue();
+		sk2.push(10);
+		sk2.push(20);
+		sk2.push(30);
+		sk2.push(40);
+		sk2.push(50);
+		
+		sk2.display();
+		
+		sk2.pop();
+		sk2.pop();
+		
+		sk2.display();
 	}
 
 }
