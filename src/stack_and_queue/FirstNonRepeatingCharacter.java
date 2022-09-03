@@ -15,7 +15,6 @@ public class FirstNonRepeatingCharacter {
 		while(ch != '.')
 		{
 			queue.add(ch);
-			System.out.println(queue);
 			if(map.containsKey(ch))
 			{
 				int ov = map.get(ch);
@@ -29,7 +28,7 @@ public class FirstNonRepeatingCharacter {
 			}
 			
 			
-			while(! queue.isEmpty())
+			while(!queue.isEmpty())
 			{
 				char fc = queue.peek();
 				int a = map.get(ch);
@@ -52,7 +51,7 @@ public class FirstNonRepeatingCharacter {
 			
 			ch = sc.next().charAt(0);
 			
-			System.out.println(queue);
+			
 		}
 	}
 
