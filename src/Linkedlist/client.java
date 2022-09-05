@@ -11,8 +11,13 @@ public class client {
 		ll.addlast(30);
 		ll.addlast(40);
 		ll.addlast(50);
+		ll.addfirst(60);
 		
 		ll.display();
+		
+		System.out.println(ll.getfirst());
+		System.out.println(ll.getlast());
+		System.out.println(ll.getat(3));
 
 	}
 

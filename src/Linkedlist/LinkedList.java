@@ -55,4 +55,52 @@ public class LinkedList {
 		}
 		
 	}
+	
+	
+	public void addfirst(int item)
+	{
+		Node nn = new Node();
+		nn.data = item;
+		nn.next = this.head;
+		
+		if(this.size == 0)
+		{
+			this.head = nn;
+			this.tail = nn;
+			this.size++;
+			
+		}
+		
+		
+		else
+		{
+			this.head = nn;
+			this.size++;
+		}
+	}
+	
+	public int getfirst()
+	{
+		return head.data;
+	}
+	
+	public int getlast()
+	{
+		return tail.data;
+	}
+	
+	public int getat(int idx)
+	{
+		Node temp = head;
+		for(int i=0; i<idx; i++)
+		{
+			temp = temp.next;
+		}
+		
+		return temp.data;
+	}
+	
+	
+	
+	
 }
