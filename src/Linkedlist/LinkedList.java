@@ -178,5 +178,58 @@ public class LinkedList {
 		return rv;
 	}
 	
+	public int removeat(int idx) throws Exception {
+		if(this.size == 0)
+		{
+			throw new Exception ("LL is Empty");
+		}
+		
+		if(idx < 0 || idx>= this.size)
+		{
+			throw new Exception ("Invalid Index");
+		}
+		
+		if(idx == 0)
+		{
+			return removeFirst();
+		}
+		else if (idx == this.size -1)
+		{
+			return removelast();
+		}
+		
+		else
+		{
+			Node a = getNodeat(idx);
+			Node b = getNodeat(idx-1);
+			Node c = getNodeat(idx+1);
+			
+			int rv = a.data;
+			
+			b.next = c;
+			
+			return rv;
+		}	
+		
+	}
 	
+	public void reversedata()
+	{
+		int left = 0;
+		int right = size-1;
+		
+		while(left < right)
+		{
+			Node ln = getNodeat(left);
+			Node rn = getNodeat(right);
+			
+			int temp = ln.data;
+			ln.data = rn.data;
+			rn.data = temp;
+			
+			left++;
+			right--;
+			
+		}
+	}
 }
