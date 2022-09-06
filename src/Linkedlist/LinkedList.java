@@ -169,8 +169,9 @@ public class LinkedList {
 		
 		else
 		{
-			Node lv = getNodeat(this.size-2);
+			Node lv = getNodeat(this.size-1);
 			this.tail = lv;
+			tail.next = null;
 			this.size--;
 		}
 		
@@ -214,6 +215,7 @@ public class LinkedList {
 	}
 	
 	public void reversedata()
+
 	{
 		int left = 0;
 		int right = size-1;
@@ -231,5 +233,39 @@ public class LinkedList {
 			right--;
 			
 		}
+	}
+
+	public void reversepointers()
+	{
+		Node prev = this.head;
+		Node curr = prev.next;
+		
+		while(curr != null)
+		{
+			Node ahead = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = ahead;
+		}
+		
+		Node t = this.head;
+		this.head = this.tail;
+		this.tail = t;
+		
+		this.tail.next = null;
+	}
+
+	
+	public int midpoint()
+	{
+		Node a = head;
+		Node b = head;
+		
+		while(b.next != null && b.next.next != null)
+		{
+			a = a.next;
+			b = b.next.next;
+		}
+		return a.data;
 	}
 }

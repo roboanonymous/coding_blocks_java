@@ -27,6 +27,7 @@ public class client {
 		ll.display();
 		
 		System.out.println(ll.removelast());
+		ll.display();
 		
 		System.out.println(ll.removeat(3));
 		
@@ -34,6 +35,11 @@ public class client {
 		
 		ll.reversedata();
 		ll.display();
+		
+		ll.reversepointers();
+		ll.display();
+		
+		
 
 	}
 
