@@ -2,7 +2,7 @@ package Linkedlist;
 
 public class client {
 
-	public static void main(String[] args) {
+	public static void main (String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		LinkedList ll = new LinkedList ();
 		
@@ -18,6 +18,15 @@ public class client {
 		System.out.println(ll.getfirst());
 		System.out.println(ll.getlast());
 		System.out.println(ll.getat(3));
+		System.out.println(ll.getNodeat(3));
+		
+		ll.addat(3, 70);
+		ll.display();
+		
+		System.out.println(ll.removeFirst());
+		ll.display();
+		
+		System.out.println(ll.removelast());
 
 	}
 

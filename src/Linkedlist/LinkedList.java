@@ -100,7 +100,83 @@ public class LinkedList {
 		return temp.data;
 	}
 	
+	public Node getNodeat(int idx)
+	{
+		Node temp = head;
+		for(int i=0; i<idx; i++)
+		{
+			temp = temp.next;
+		}
+		
+		return temp;
+	}
 	
+	public void addat(int idx , int data)
+	{
+		
+		Node temp = head;
+		for(int i=0; i<idx-1; i++)
+		{
+			temp = temp.next;
+		}
+		
+		Node ne = new Node();
+		ne.data = data;
+		ne.next = temp.next;
+		
+		temp.next = ne;
+		this.size++;
+		
+	}
+	
+	public int removeFirst() throws Exception {
+		if(this.size == 0)
+		{
+			throw new Exception ("LL is Empty");
+		}
+		
+		int rv = head.data;
+		if (this.size == 1)
+		{
+			this.head = null;
+			this.tail = null;
+			this.size = 0;
+		}
+		
+		else
+		{
+			this.head = this.head.next;
+			this.size--;
+		}
+		
+		
+		return rv;
+	}
+	
+	public int removelast() throws Exception {
+		if(this.size == 0)
+		{
+			throw new Exception ("LL is Empty");
+		}
+		
+		int rv = this.tail.data;
+		if (this.size == 1)
+		{
+			this.head = null;
+			this.tail = null;
+			this.size = 0;
+		}
+		
+		else
+		{
+			Node lv = getNodeat(this.size-2);
+			this.tail = lv;
+			this.size--;
+		}
+		
+		
+		return rv;
+	}
 	
 	
 }
