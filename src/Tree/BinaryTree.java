@@ -119,8 +119,78 @@ public class BinaryTree {
 		int count = CountNodes(root.left) + CountNodes(root.right)+ 1;
 		return count;
 	}
-
-
+	
+	public static int SumNodes(Node root)
+	{
+		if(root == null)
+		{
+			return 0;
+		}
+		
+		int count = SumNodes(root.left) + SumNodes(root.right)+ root.data;
+		return count;
+	}
+	
+	public static int height(Node root)
+	{
+		if(root == null)
+		{
+			return 0;
+		}
+		
+		int max = Math.max(height(root.left), height(root.right)) + 1;
+		return max;
+	}
+	
+	public static int diameter(Node root)
+	{
+		if(root == null)
+		{
+			return 0;
+		}
+		
+		int dia1 = diameter(root.left);
+		int dia2 = diameter(root.right);
+		int dia3 = height(root.left)+ height(root.right)+1;
+		
+		int max = Math.max(Math.max(dia1, dia2), dia3);
+		return max;
+	}
+	
+	static class treeinfo
+	{
+		int diam;
+		int height;
+		
+		
+		treeinfo(int height , int diam){
+			this.diam = diam;
+			this.height = height;
+		}
+	}
+	
+	public static treeinfo diameter2(Node root)
+	{
+		if(root == null)
+		{
+			return new treeinfo(0,0);
+		}
+		
+		treeinfo left = diameter2(root.left);
+		treeinfo right = diameter2(root.right);
+		
+		int myheight = Math.max(left.height, right.height)+1;
+		
+		int dia1 = diameter(root.left);
+		int dia2 = diameter(root.right);
+		int dia3 = left.height+ right.height+1;
+		
+		int mydiam = Math.max(Math.max(dia1, dia2), dia3);
+		
+		treeinfo myinfo = new treeinfo(myheight, mydiam);
+		return myinfo;
+	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -141,6 +211,10 @@ public class BinaryTree {
 		System.out.println();
 		
 		System.out.println(CountNodes(root));
+		System.out.println(SumNodes(root));
+		System.out.println(height(root));
+		System.out.println(diameter(root));
+		System.out.println(diameter2(root).diam);
 		
 		
 	}
