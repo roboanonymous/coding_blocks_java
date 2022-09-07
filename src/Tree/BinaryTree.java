@@ -1,6 +1,6 @@
 package Tree;
 
-
+import java.util.*;
 
 public class BinaryTree {
 	
@@ -76,6 +76,49 @@ public class BinaryTree {
 		postorder(root.right);
 		System.out.print(root.data + " ");
 	}
+	
+	public static void levelorder(Node root)
+	{
+		Queue <Node> q  = new LinkedList<>();
+		q.add(root);
+		q.add(null);
+		
+		while(!q.isEmpty()) {
+			Node currNode = q.remove();
+			if(currNode == null)
+			{
+				System.out.println();
+				if(q.isEmpty()) {
+					break;
+				}
+				else {
+					q.add(null);
+				}
+			}
+			
+			else {
+				System.out.print(currNode.data+ " ");
+				if(currNode.left != null) {
+					q.add(currNode.left);
+				}
+				if(currNode.right != null) {
+					q.add(currNode.right);
+				}
+			}
+		}
+		
+	}
+	
+	public static int CountNodes(Node root)
+	{
+		if(root == null)
+		{
+			return 0;
+		}
+		
+		int count = CountNodes(root.left) + CountNodes(root.right)+ 1;
+		return count;
+	}
 
 
 	
@@ -94,6 +137,10 @@ public class BinaryTree {
 		System.out.println();
 		postorder(root);
 		System.out.println();
+		levelorder(root);
+		System.out.println();
+		
+		System.out.println(CountNodes(root));
 		
 		
 	}
