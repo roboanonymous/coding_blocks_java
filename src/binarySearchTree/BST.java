@@ -80,12 +80,12 @@ public class BST {
 			return;
 		}
 		System.out.println(node.Left.data + " " +node.data + "  " + node.Right.data);
-	//	display2(node.Left);
+		display2(node.Left);
 		display2(node.Right);
 	}
 	
 	
-	private void inorder() {
+	public void inorder() {
 		inorder(this.Root);
 	}
 	
@@ -101,15 +101,29 @@ public class BST {
 		inorder(root.Right);
 	}
 	
-	public static void main(String[] args) {
-		
-		int [] arr = {10,20,30,40,50,60,70,80};
-		BST tree = new BST(arr);
-		
-	//	tree.display();
-	//	tree.inorder();
-		tree.display2();
-		
-		
+	public boolean find(int item)
+	{
+		return find(this.Root, item);
 	}
+	
+	
+	private boolean find(Node node, int item)
+	{
+		if(node == null )
+		{
+			return false;
+		}
+		
+		if(item > node.data)
+		{
+			find(node.Right, item);
+		}
+		else if(item < node.data)
+		{
+			find(node.Left, item);
+		}
+		
+		return true;
+	}
+	
 }
