@@ -28,15 +28,16 @@ public class GraphClient {
 		
 		graph.display();
 		
-		System.out.println(graph.haspath("A", "F", new HashMap()));
-		System.out.println(graph.haspath("A", "B", new HashMap()));
-		System.out.println(graph.haspath("A", "C", new HashMap()));
+	//	System.out.println(graph.haspath("A", "F", new HashMap()));
+	//	System.out.println(graph.haspath("A", "B", new HashMap()));
+	//	System.out.println(graph.haspath("A", "C", new HashMap()));
 		
 	//	graph.RemoveEdge("A", "B");	
 	//	graph.display();		
 	//	graph.removeVertex("C");
 	//	graph.display();
 		
+		System.out.println(graph.bfs("A" , "F"));
 		
 
 	}

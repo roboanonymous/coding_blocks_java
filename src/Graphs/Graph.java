@@ -143,6 +143,57 @@ public class Graph {
     	
     }
     
+    private class pair
+    {
+    	String vname;
+    	String psf;
+    }
     
+    public boolean bfs (String src, String dest)
+    {
+    	HashMap <String , Boolean> process = new HashMap<>();
+    	LinkedList <pair> queue = new LinkedList <>();
+    	
+    	pair sp = new pair();
+    	sp.vname = src;
+    	sp.psf = src;
+    	
+    	while(!queue.isEmpty()) {
+    		
+    		pair rp = queue.removeFirst(); 
+    		
+    		if(process.containsKey(rp.vname)){
+    			continue;
+    		}
+    		
+    		process.put(rp.vname, true);
+    		
+    		if(containEdge(rp.vname, dest))
+    		{
+    			return true;
+    		}
+    		
+    		Vertex rpvtx = vtces.get(rp.vname);
+    		ArrayList <String> nbrs = new ArrayList <> (rpvtx.nbrs.keySet());
+    		
+    		for(String nbr: nbrs )
+    		{
+    			if(!process.containsKey(nbrs))
+    			{
+    				pair np = new pair ();
+        			np.vname = nbr;
+        			np.psf = rp.psf + nbr;
+        			
+        			queue.addLast(np);
+    				
+    			}
+    			
+    		}
+    		
+    		
+    	}
+    	
+    	return false;
+    }
 }
 
