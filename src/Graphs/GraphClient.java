@@ -1,5 +1,7 @@
 package Graphs;
 
+import java.util.HashMap;
+
 public class GraphClient {
 
 	public static void main(String[] args) {
@@ -26,9 +28,15 @@ public class GraphClient {
 		
 		graph.display();
 		
-		graph.RemoveEdge("A", "B");
+		System.out.println(graph.haspath("A", "F", new HashMap()));
+		System.out.println(graph.haspath("A", "B", new HashMap()));
+		System.out.println(graph.haspath("A", "C", new HashMap()));
 		
-		graph.display();
+	//	graph.RemoveEdge("A", "B");	
+	//	graph.display();		
+	//	graph.removeVertex("C");
+	//	graph.display();
+		
 		
 
 	}

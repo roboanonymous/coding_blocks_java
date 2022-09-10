@@ -117,6 +117,31 @@ public class Graph {
     	System.out.println("---------------------------");
     }
     
+    public boolean haspath(String vname1, String vname2 , HashMap <String , Boolean> process)
+    {
+    	process.put(vname1, true);
+    	
+    	if(containEdge(vname1 , vname2))
+    	{
+    		return true;
+    	}
+    	
+    	Vertex vtx = vtces.get(vname1);
+    	
+    	ArrayList<String> keys = new ArrayList <>(vtx.nbrs.keySet());
+    	
+    	for(String key: keys)
+    	{
+    		if( !process.containsKey(key) && haspath(key , vname2, process))
+    		{
+    			return true;
+    		}
+    	}
+    	
+    	
+    	return false;
+    	
+    }
     
     
 }
