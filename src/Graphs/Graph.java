@@ -158,6 +158,8 @@ public class Graph {
     	sp.vname = src;
     	sp.psf = src;
     	
+    	queue.addLast(sp);
+    	
     	while(!queue.isEmpty()) {
     		
     		pair rp = queue.removeFirst(); 
@@ -170,6 +172,7 @@ public class Graph {
     		
     		if(containEdge(rp.vname, dest))
     		{
+    			System.out.println(rp.psf + dest);
     			return true;
     		}
     		
